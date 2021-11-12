@@ -7,6 +7,30 @@
   margin-right:5px;
 }
 
+.確定按鈕 {
+  font-size:16px;
+  background-color:lawngreen; 
+  border-width:1px;
+  border-radius:5px;
+  vertical-align:top; 
+  margin-top:10px; 
+  float:right;
+  margin-right:48%; 
+  width:50px  
+}
+
+.取消按鈕 {
+  font-size:16px;
+  background-color:red; 
+  color:white;
+  border-width:1px;
+  border-radius:5px;
+  vertical-align:top; 
+  margin-top:10px;   
+  float:right;
+  margin-right:10%; 
+  width:50px  
+}
 
 canvas{
 

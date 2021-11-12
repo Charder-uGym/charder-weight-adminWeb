@@ -155,7 +155,7 @@
                         <thead>
                           <tr>
                             <th id="ml-使用單位名稱">使用單位名稱</th>
-                            <th id="ml-密碼">密碼</th>
+                            <th id="ml-密碼">登入密碼</th>
                             <th id="ml-器材種類">器材種類</th>
                             <th id="ml-器材序號">器材序號</th>
 
@@ -175,8 +175,34 @@
 
           </div>
           <!-- /Page Content -->
+          
+
 
         </div>
+        <div class="page-wrapper" id="input-form">         
+          <div >
+           <div style="height:20px"></div>
+            <input id="使用單位名稱" style="float:right;margin-right:46%">
+            <label style="float:right; margin-right:20px">使用單位名稱:</label> <br>
+            
+            <input id="登入密碼" style="float:right;margin-right:46%">
+            <label style="float:right; margin-right:20px">登入密碼:</label> <br> 
+                       
+            <input id="器材種類" style="float:right;margin-right:46%">
+            <label style="float:right; margin-right:20px">器材種類:</label> <br>  
+                                 
+            <input id="器材序號" style="float:right;margin-right:46%">
+            <label style="float:right; margin-right:20px">器材種類:</label> <br>
+            
+            <textarea id="備註說明" rows="6" style="float:right;margin-right:46%; width:244px"></textarea>
+            <label style="float:right; margin-right:20px">備註說明:</label> <br>     
+            
+            <button class="確定按鈕" onClick="alert('Demo 版沒作用')" >確認</button>      
+            <button class="取消按鈕" onClick="dismissInputForm()">取消</button>      
+            
+          </div>
+        </div>
+                  
         <!-- /Page Wrapper -->
 
         <!-- Page Wrapper -->
@@ -440,14 +466,24 @@
         } );
         
         function show_measurements(data){
-          //console.log(rsvResult[data]);
+          console.log(rsvResult[data]);
           if (data==0) {
-            alert("Will show a form, to be implemented");
+            $("#使用單位名稱").val(rsvResult[data][0]);
+            $("#登入密碼").val(rsvResult[data][1]);
+            $("#器材種類").val(rsvResult[data][2]);
+            $("#器材序號").val(rsvResult[data][3]);
+            $("#備註說明").val(rsvResult[data][4]);
+            $("#rsv-page").hide();
+            $("#input-form").show();
           } else {
             alert("Demo 版不支援")
           }
         }
         
+        function dismissInputForm(){
+          $("#rsv-page").show();
+          $("#input-form").hide();          
+        }
         
         var ctx;
         var myChart;
@@ -896,8 +932,8 @@
       
       <script>
         // for demo
-//        $("#checkDetails0").css("background-color", "rgb(255,67,80)");
-//        $("#checkDetails0").css("color", "rgb(255,255,255)");
+        $("#checkDetails0").css("background-color", "rgb(255,67,80)");
+        $("#checkDetails0").css("color", "rgb(255,255,255)");
       </script>
        
       <style>
